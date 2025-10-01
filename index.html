@@ -335,6 +335,7 @@
             border-radius: 5px;
             border: 1px solid rgba(15, 136, 136, 0.3);
             transition: all 0.3s;
+            margin: 5px;
         }
         
         .download-btn:hover {
@@ -344,6 +345,59 @@
         
         .coming-soon {
             opacity: 0.6;
+        }
+        
+        /* 版本下载页面 */
+        .version-page {
+            display: none;
+            padding: 100px 0;
+            min-height: 80vh;
+        }
+        
+        .version-page.active {
+            display: block;
+        }
+        
+        .version-list {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .version-item {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .version-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .version-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .version-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+        
+        .back-btn:hover {
+            color: var(--accent-color);
         }
         
         /* 更新日志区域 */
@@ -501,6 +555,17 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .version-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .version-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -531,7 +596,7 @@
         <!-- 英雄区域 -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="version-badge">Alpha1 - 发布于 2025年9月30日</div>
+                <div class="version-badge">最新版本 Alpha2 - 发布于 2025年10月15日</div>
                 <h2>Fialiaoi-cpp</h2>
                 <p>一个高效、现代且易于使用的多语言开发框架，持续为Oler提供更好的编程体验。</p>
                 <a href="#download" class="cta-button">立即下载</a>
@@ -613,8 +678,8 @@
                     <div class="download-card">
                         <div class="download-icon"><i class="fab fa-windows"></i></div>
                         <h3>Windows</h3>
-                        <p>Alpha1版本 - 适用于 Windows 10/11 系统</p>
-                        <a href="https://wwhl.lanzouu.com/izJLV37d5s5c" class="download-btn">下载(提取码:avgy) Alpha1</a>
+                        <p>支持 Windows 10/11 系统</p>
+                        <a href="#" class="download-btn" onclick="showVersionPage('windows')">查看所有版本</a>
                     </div>
                     <div class="download-card coming-soon">
                         <div class="download-icon"><i class="fab fa-linux"></i></div>
@@ -638,11 +703,58 @@
             </div>
         </section>
 
+        <!-- Windows版本下载页面 -->
+        <section id="windows-versions" class="version-page">
+            <div class="container">
+                <a href="#download" class="back-btn" onclick="hideVersionPages()">
+                    <i class="fas fa-arrow-left"></i> 返回下载页面
+                </a>
+                <h2 class="section-title">Windows 版本下载</h2>
+                <div class="version-list">
+                    <div class="version-item">
+                        <div class="version-info">
+                            <h3>Alpha2</h3>
+                            <p>最新版本 - 新增Java语言支持，预设GCC和Java21编译器</p>
+                            <div class="version-date">发布日期: 2025-10-1</div>
+                        </div>
+                        <div class="version-actions">
+                            <a href="https://www.123865.com/s/uMdgvd-I0Wc3" class="download-btn">下载 Alpha2</a>
+                        </div>
+                    </div>
+                    <div class="version-item">
+                        <div class="version-info">
+                            <h3>Alpha1</h3>
+                            <p>初始版本 - 基础编辑器和代码高亮功能</p>
+                            <div class="version-date">发布日期: 2025-09-30</div>
+                        </div>
+                        <div class="version-actions">
+                            <a href="https://m204.lanosso.com:446/09302100255963642bb/2025/09/30/1db74ae150b4798418cda63c0e129c43.exe?st=GcFXxRgi3m27OgEVt2wi-A&e=1759239363&b=VEBdNAVkUjsDP1BnBDsGawJ6WmVUJVEnCHtfEwdsA3EGPF08V2YHXQAcAjoLKA5_bVmJdbQZrBS1SZFsuB2U_c&fi=255963642&pid=1-83-233-63&up=2&mp=0&co=0" class="download-btn">下载 Alpha1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 更新日志区域 -->
         <section id="changelog" class="changelog">
             <div class="container">
-                <h2 class="section-title">Alpha1 更新日志</h2>
+                <h2 class="section-title">更新日志</h2>
                 <div class="changelog-container">
+                    <div class="version">
+                        <div class="version-header">
+                            <h3 class="version-title">Alpha2</h3>
+                            <span class="version-date">2025-10-1</span>
+                        </div>
+                        <ul class="version-list">
+                            <li>新增了Java语言编译支持</li>
+                            <li>预设了GCC编译器和Java21编译器</li>
+                            <li>优化了代码编辑器性能</li>
+                            <li>改进了用户界面设计</li>
+                            <li>增强了代码补全功能</li>
+                            <li>修复了Alpha1版本中的多个问题</li>
+                        </ul>
+                    </div>
+                    
                     <div class="version">
                         <div class="version-header">
                             <h3 class="version-title">Alpha1</h3>
@@ -727,6 +839,35 @@
                 }
             });
         });
+
+        // 版本页面显示/隐藏功能
+        function showVersionPage(platform) {
+            // 隐藏所有版本页面
+            document.querySelectorAll('.version-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 显示对应的版本页面
+            document.getElementById(`${platform}-versions`).classList.add('active');
+            
+            // 滚动到页面顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        function hideVersionPages() {
+            // 隐藏所有版本页面
+            document.querySelectorAll('.version-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 滚动到下载区域
+            document.getElementById('download').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
