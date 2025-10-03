@@ -16,6 +16,38 @@
             --header-height: 70px;
             --border-radius: 8px;
         }
+
+        /* 蓝色主题 - Fialiaoi-cpp */
+        .theme-blue {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #4299e1;
+            --accent-hover: #63b3ed;
+            --text-color: #e6e6e6;
+            --background-color: #0f0f1a;
+            --card-bg: #1e1e2f;
+            --gradient-start: #4299e1;
+            --gradient-end: #63b3ed;
+            --disclaimer-bg: rgba(66, 153, 225, 0.1);
+            --disclaimer-border: rgba(66, 153, 225, 0.3);
+            --disclaimer-color: #90cdf4;
+        }
+
+        /* 橙色主题 - Origin */
+        .theme-orange {
+            --primary-color: #2d1a0f;
+            --secondary-color: #3e2616;
+            --accent-color: #ed8936;
+            --accent-hover: #f6ad55;
+            --text-color: #f7fafc;
+            --background-color: #1a0f0a;
+            --card-bg: #2f1e14;
+            --gradient-start: #ed8936;
+            --gradient-end: #f6ad55;
+            --disclaimer-bg: rgba(237, 137, 54, 0.1);
+            --disclaimer-border: rgba(237, 137, 54, 0.3);
+            --disclaimer-color: #fbd38d;
+        }
         
         * {
             margin: 0;
@@ -29,6 +61,7 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: all 0.5s ease;
         }
         
         a {
@@ -38,7 +71,7 @@
         }
         
         a:hover {
-            color: #0cf;
+            color: var(--accent-hover);
         }
         
         .container {
@@ -57,6 +90,11 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+
+        .theme-orange header {
+            background-color: rgba(45, 26, 15, 0.95);
         }
         
         .navbar {
@@ -74,7 +112,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--accent-color), #0cf);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -82,14 +120,16 @@
             margin-right: 10px;
             font-weight: bold;
             color: var(--primary-color);
+            transition: all 0.5s ease;
         }
         
         .logo h1 {
             font-size: 1.5rem;
-            background: linear-gradient(to right, var(--accent-color), #0cf);
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            transition: all 0.5s ease;
         }
         
         .nav-links {
@@ -140,6 +180,7 @@
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--background-color) 100%);
             position: relative;
             overflow: hidden;
+            transition: all 0.5s ease;
         }
         
         .hero:before {
@@ -149,17 +190,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 20%, rgba(15, 136, 136, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, rgba(66, 153, 225, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(99, 179, 237, 0.1) 0%, transparent 50%);
+            transition: all 0.5s ease;
+        }
+
+        .theme-orange .hero:before {
+            background: radial-gradient(circle at 30% 20%, rgba(237, 137, 54, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(246, 173, 85, 0.1) 0%, transparent 50%);
         }
         
         .hero h2 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(to right, var(--accent-color), #0cf);
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            transition: all 0.5s ease;
         }
         
         .hero p {
@@ -169,32 +217,103 @@
             color: #b8b8b8;
         }
         
+        .disclaimer {
+            background: var(--disclaimer-bg);
+            border: 1px solid var(--disclaimer-border);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 700px;
+            font-size: 0.9rem;
+            color: var(--disclaimer-color);
+            transition: all 0.5s ease;
+        }
+        
         .version-badge {
             display: inline-block;
-            background: rgba(15, 136, 136, 0.2);
+            background: rgba(66, 153, 225, 0.2);
             color: var(--accent-color);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             margin-bottom: 20px;
-            border: 1px solid rgba(15, 136, 136, 0.3);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .theme-orange .version-badge {
+            background: rgba(237, 137, 54, 0.2);
+            border: 1px solid rgba(237, 137, 54, 0.3);
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-color), #0cf);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: var(--primary-color);
             padding: 12px 30px;
             border-radius: 30px;
             font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(15, 136, 136, 0.3);
+            box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+        }
+
+        .theme-orange .cta-button {
+            box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(15, 136, 136, 0.4);
+            box-shadow: 0 7px 20px rgba(66, 153, 225, 0.4);
             color: var(--primary-color);
+        }
+
+        .theme-orange .cta-button:hover {
+            box-shadow: 0 7px 20px rgba(237, 137, 54, 0.4);
+        }
+        
+        /* 栏目切换 */
+        .section-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            color: var(--accent-color);
+        }
+        
+        .tab-button.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .tab-button:hover {
+            color: var(--accent-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
         
         /* 特性区域 */
@@ -214,11 +333,12 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background: linear-gradient(to right, var(--accent-color), #0cf);
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
+            transition: all 0.5s ease;
         }
         
         .features-grid {
@@ -245,6 +365,7 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .feature-card h3 {
@@ -256,6 +377,7 @@
         .about {
             padding: 100px 0;
             background-color: var(--primary-color);
+            transition: all 0.5s ease;
         }
         
         .about-content {
@@ -271,6 +393,7 @@
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .about-section p {
@@ -284,6 +407,7 @@
             border-radius: var(--border-radius);
             padding: 25px;
             margin-top: 20px;
+            transition: all 0.5s ease;
         }
         
         .contact-info p {
@@ -320,6 +444,7 @@
             font-size: 3rem;
             margin-bottom: 20px;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .download-card h3 {
@@ -329,18 +454,27 @@
         
         .download-btn {
             display: inline-block;
-            background: rgba(15, 136, 136, 0.2);
+            background: rgba(66, 153, 225, 0.2);
             color: var(--accent-color);
             padding: 10px 25px;
             border-radius: 5px;
-            border: 1px solid rgba(15, 136, 136, 0.3);
+            border: 1px solid rgba(66, 153, 225, 0.3);
             transition: all 0.3s;
             margin: 5px;
         }
+
+        .theme-orange .download-btn {
+            background: rgba(237, 137, 54, 0.2);
+            border: 1px solid rgba(237, 137, 54, 0.3);
+        }
         
         .download-btn:hover {
-            background: rgba(15, 136, 136, 0.3);
+            background: rgba(66, 153, 225, 0.3);
             color: var(--accent-color);
+        }
+
+        .theme-orange .download-btn:hover {
+            background: rgba(237, 137, 54, 0.3);
         }
         
         .coming-soon {
@@ -372,11 +506,13 @@
             justify-content: space-between;
             align-items: center;
             border-left: 4px solid var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .version-info h3 {
             color: var(--accent-color);
             margin-bottom: 10px;
+            transition: all 0.5s ease;
         }
         
         .version-date {
@@ -404,6 +540,7 @@
         .changelog {
             padding: 100px 0;
             background-color: var(--primary-color);
+            transition: all 0.5s ease;
         }
         
         .changelog-container {
@@ -418,6 +555,7 @@
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border-left: 4px solid var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .version-header {
@@ -431,6 +569,7 @@
         .version-title {
             font-size: 1.5rem;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .version-date {
@@ -453,6 +592,7 @@
             color: var(--accent-color);
             position: absolute;
             left: 0;
+            transition: all 0.5s ease;
         }
         
         .feature-grid {
@@ -463,10 +603,15 @@
         }
         
         .feature-item {
-            background: rgba(15, 136, 136, 0.1);
+            background: rgba(66, 153, 225, 0.1);
             padding: 10px 15px;
             border-radius: 5px;
             border-left: 3px solid var(--accent-color);
+            transition: all 0.5s ease;
+        }
+
+        .theme-orange .feature-item {
+            background: rgba(237, 137, 54, 0.1);
         }
         
         .notice {
@@ -475,6 +620,20 @@
             padding: 15px;
             border-radius: 4px;
             margin: 15px 0;
+        }
+        
+        /* 空白区域样式 */
+        .empty-section {
+            text-align: center;
+            padding: 80px 0;
+            color: #888;
+        }
+        
+        .empty-section i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         /* 资源表格 */
@@ -492,6 +651,7 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         .resource-links {
@@ -519,6 +679,7 @@
         .resource-links i {
             margin-right: 10px;
             color: var(--accent-color);
+            transition: all 0.5s ease;
         }
         
         /* 页脚 */
@@ -526,6 +687,7 @@
             background-color: var(--primary-color);
             padding: 50px 0 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s ease;
         }
         
         .copyright {
@@ -584,10 +746,20 @@
             .feature-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .section-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body>
+<body class="theme-blue">
     <!-- 导航栏 -->
     <header>
         <div class="container">
@@ -617,241 +789,264 @@
                 <div class="version-badge">最新版本 Beta1 - 功能完整的开发环境</div>
                 <h2>Fialiaoi-cpp</h2>
                 <p>一个高效、现代且易于使用的多语言开发框架，持续为Oler提供更好的编程体验。</p>
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i> 免责声明：本网站的任何软件之间互不关联
+                </div>
                 <a href="#download" class="cta-button">立即下载</a>
             </div>
         </section>
 
-        <!-- 特性区域 -->
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">强大的特色功能</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-language"></i></div>
-                        <h3>中文化界面</h3>
-                        <p>完整的本地化支持，菜单、按钮、状态栏、提示信息全部中文化，提供更好的用户体验。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-code"></i></div>
-                        <h3>智能代码编辑</h3>
-                        <p>代码高亮、自动缩进、代码补全、函数签名提示，让编程更加高效便捷。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-folder-tree"></i></div>
-                        <h3>文件树管理</h3>
-                        <p>直观的文件树界面，支持打开文件夹、双击打开文件，方便项目文件管理。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-window-restore"></i></div>
-                        <h3>多标签编辑器</h3>
-                        <p>支持多文件同时编辑，标签页管理，轻松在不同文件间切换。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-terminal"></i></div>
-                        <h3>多终端支持</h3>
-                        <p>可新建多个终端，支持shell命令执行，每个终端可独立运行和中断子进程。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-cog"></i></div>
-                        <h3>可配置环境</h3>
-                        <p>完整的配置界面，支持主题切换、字体设置、编译器路径配置等，配置持久化保存。</p>
-                    </div>
-                </div>
-            </div>
+        <!-- 栏目切换 -->
+        <section class="section-tabs">
+            <button class="tab-button active" data-tab="fialiaoi">Fialiaoi-cpp</button>
+            <button class="tab-button" data-tab="origin">Origin</button>
         </section>
 
-        <!-- 关于我们区域 -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">关于我们</h2>
-                <div class="about-content">
-                    <div class="about-section">
-                        <h3>我们的使命</h3>
-                        <p>致力为所有广大Oler创造一个可以使用一个软件编译所有语言的工具。</p>
-                    </div>
-                    
-                    <div class="about-section">
-                        <h3>起源</h3>
-                        <p>Fialiaoi-cpp起源于一名初中生Oler对信息学和软件开发的热爱，在使用长久Dev-cpp、Clion、Vs code等编码工具后突发奇想，将这些工具的优点结合在一块儿，打造出了这款软件。</p>
-                        <p>从每一个版本、每一个历程，Fialiaoi-cpp都做出了不一样的改变，不像其他软件变化微乎其微，Fialiaoi现在还在持续维护并开发中，欢迎各位Oler来下载并使用该软件。</p>
-                    </div>
-                    
-                    <div class="about-section">
-                        <h3>联系我们</h3>
-                        <div class="contact-info">
-                            <p><i class="fas fa-envelope"></i> 邮箱: m.fialiaoi9363@outlook.com</p>
-                            <p><i class="fas fa-globe"></i> 官方网站: <a href="#">https://fialiaoi-cpp.org</a></p>
-                            <p><i class="fab fa-github"></i> 开源地址: <a href="https://github.com/Fialia9363/fialiaoi-cpp">https://github.com/Fialia9363/fialiaoi-cpp</a></p>
+        <!-- Fialiaoi-cpp 栏目 -->
+        <div id="fialiaoi" class="tab-content active">
+            <!-- 特性区域 -->
+            <section id="features" class="features">
+                <div class="container">
+                    <h2 class="section-title">强大的特色功能</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-language"></i></div>
+                            <h3>中文化界面</h3>
+                            <p>完整的本地化支持，菜单、按钮、状态栏、提示信息全部中文化，提供更好的用户体验。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-code"></i></div>
+                            <h3>智能代码编辑</h3>
+                            <p>代码高亮、自动缩进、代码补全、函数签名提示，让编程更加高效便捷。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-folder-tree"></i></div>
+                            <h3>文件树管理</h3>
+                            <p>直观的文件树界面，支持打开文件夹、双击打开文件，方便项目文件管理。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-window-restore"></i></div>
+                            <h3>多标签编辑器</h3>
+                            <p>支持多文件同时编辑，标签页管理，轻松在不同文件间切换。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-terminal"></i></div>
+                            <h3>多终端支持</h3>
+                            <p>可新建多个终端，支持shell命令执行，每个终端可独立运行和中断子进程。</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-cog"></i></div>
+                            <h3>可配置环境</h3>
+                            <p>完整的配置界面，支持主题切换、字体设置、编译器路径配置等，配置持久化保存。</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 下载区域 -->
-        <section id="download" class="download">
-            <div class="container">
-                <h2 class="section-title">下载</h2>
-                <div class="download-grid">
-                    <div class="download-card">
-                        <div class="download-icon"><i class="fab fa-windows"></i></div>
-                        <h3>Windows</h3>
-                        <p>支持 Windows 10/11 系统</p>
-                        <a href="#" class="download-btn" onclick="showVersionPage('windows')">查看所有版本</a>
-                    </div>
-                    <div class="download-card coming-soon">
-                        <div class="download-icon"><i class="fab fa-linux"></i></div>
-                        <h3>Linux</h3>
-                        <p>暂不支持，敬请期待</p>
-                        <a href="#" class="download-btn" onclick="return false;">即将推出</a>
-                    </div>
-                    <div class="download-card coming-soon">
-                        <div class="download-icon"><i class="fab fa-apple"></i></div>
-                        <h3>macOS</h3>
-                        <p>暂不支持，敬请期待</p>
-                        <a href="#" class="download-btn" onclick="return false;">即将推出</a>
-                    </div>
-                    <div class="download-card">
-                        <div class="download-icon"><i class="fas fa-code"></i></div>
-                        <h3>源代码</h3>
-                        <p>从 GitHub 获取最新源代码</p>
-                        <a href="https://github.com/Fialia9363/fialiaoi-cpp" class="download-btn">查看</a>
+            <!-- 关于我们区域 -->
+            <section id="about" class="about">
+                <div class="container">
+                    <h2 class="section-title">关于我们</h2>
+                    <div class="about-content">
+                        <div class="about-section">
+                            <h3>我们的使命</h3>
+                            <p>致力为所有广大Oler创造一个可以使用一个软件编译所有语言的工具。</p>
+                        </div>
+                        
+                        <div class="about-section">
+                            <h3>起源</h3>
+                            <p>Fialiaoi-cpp起源于一名初中生Oler对信息学和软件开发的热爱，在使用长久Dev-cpp、Clion、Vs code等编码工具后突发奇想，将这些工具的优点结合在一块儿，打造出了这款软件。</p>
+                            <p>从每一个版本、每一个历程，Fialiaoi-cpp都做出了不一样的改变，不像其他软件变化微乎其微，Fialiaoi现在还在持续维护并开发中，欢迎各位Oler来下载并使用该软件。</p>
+                        </div>
+                        
+                        <div class="about-section">
+                            <h3>联系我们</h3>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> 邮箱: m.fialiaoi9363@outlook.com</p>
+                                <p><i class="fas fa-globe"></i> 官方网站: <a href="#">https://fialiaoi-cpp.org</a></p>
+                                <p><i class="fab fa-github"></i> 开源地址: <a href="https://github.com/Fialia9363/fialiaoi-cpp">https://github.com/Fialia9363/fialiaoi-cpp</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Windows版本下载页面 -->
-        <section id="windows-versions" class="version-page">
-            <div class="container">
-                <a href="#download" class="back-btn" onclick="hideVersionPages()">
-                    <i class="fas fa-arrow-left"></i> 返回下载页面
-                </a>
-                <h2 class="section-title">Windows 版本下载</h2>
-                <div class="version-list">
-                    <div class="version-item">
-                        <div class="version-info">
-                            <h3>Beta1</h3>
-                            <p>功能完整的开发环境 - 包含中文化界面、文件树、多标签编辑器等完整功能</p>
-                            <div class="version-date">最新版本</div>
+            <!-- 下载区域 -->
+            <section id="download" class="download">
+                <div class="container">
+                    <h2 class="section-title">下载</h2>
+                    <div class="download-grid">
+                        <div class="download-card">
+                            <div class="download-icon"><i class="fab fa-windows"></i></div>
+                            <h3>Windows</h3>
+                            <p>支持 Windows 10/11 系统</p>
+                            <a href="#" class="download-btn" onclick="showVersionPage('windows')">查看所有版本</a>
                         </div>
-                        <div class="version-actions">
-                            <a href="https://123-184-221-110.pd1.cjjd19.com:30443/download-cdn.123295.com/123-578/956a9208/1852770967-0/956a9208d1e5329cba1e2c16a1231a42/c-m98?v=5&t=1759557366&s=175955736665f49908af40af5a836f507186d44dc6&r=T0LG4L&bzc=2&bzs=313835323737303936373a35363337343838363a34323234373136393a31383532373730393637&bzp=0&bi=4246284666&filename=fialiaoi-cpp_beta1+Install.exe&x-mf-biz-cid=3737e223-da97-4055-8e99-5d341de5bb08-584000&auto_redirect=0&ndcp=1&cache_type=1&xmfcid=f4aea958-4759-406a-898a-19a9f006d6b055a09c88be1" class="download-btn">下载 Beta1</a>
+                        <div class="download-card coming-soon">
+                            <div class="download-icon"><i class="fab fa-linux"></i></div>
+                            <h3>Linux</h3>
+                            <p>暂不支持，敬请期待</p>
+                            <a href="#" class="download-btn" onclick="return false;">即将推出</a>
                         </div>
-                    </div>
-                    <div class="version-item">
-                        <div class="version-info">
-                            <h3>Alpha2</h3>
-                            <p>新增Java语言支持，预设GCC和Java21编译器</p>
-                            <div class="version-date">发布日期: 2025-10-1</div>
+                        <div class="download-card coming-soon">
+                            <div class="download-icon"><i class="fab fa-apple"></i></div>
+                            <h3>macOS</h3>
+                            <p>暂不支持，敬请期待</p>
+                            <a href="#" class="download-btn" onclick="return false;">即将推出</a>
                         </div>
-                        <div class="version-actions">
-                            <a href="https://123-184-218-58.pd1.cjjd19.com:30443/download-cdn.123295.com/123-19/aa938b1f/1852770967-0/aa938b1f491c2d4d3311dc618e437013/c-m95?v=5&t=1759557316&s=1759557316190f211e6ce05d06d6316c87077ec95a&r=5GO3FR&bzc=2&bzs=313835323737303936373a35363337343832333a3335333134343236333a31383532373730393637&bzp=0&bi=4246284666&filename=code.7z&x-mf-biz-cid=46bdab48-fb18-4f00-b320-b481f57281ea-6eaa77&auto_redirect=0&ndcp=1&cache_type=1&xmfcid=08bc50fa-11a6-419b-ae43-c0454cda8fd755a09c88be1" class="download-btn">下载 Alpha2</a>
-                        </div>
-                    </div>
-                    <div class="version-item">
-                        <div class="version-info">
-                            <h3>Alpha1</h3>
-                            <p>初始版本 - 基础编辑器和代码高亮功能</p>
-                            <div class="version-date">发布日期: 2025-09-30</div>
-                        </div>
-                        <div class="version-actions">
-                            <a href="https://123-184-218-56.pd1.cjjd19.com:30443/download-cdn.123295.com/123-99/b9ba1893/1852770967-0/b9ba18930401c6bd9971e5dd38141463/c-m92?v=5&t=1759557185&s=17595571853b62cb7323e3ecdf528934bef0c4b693&r=SR18Q1&bzc=2&bzs=313835323737303936373a35363337343838373a34353930363232313a31383532373730393637&bzp=0&bi=4246284666&filename=Fialiaoi-cpp+Alpha1_Install.exe&x-mf-biz-cid=8b69af3b-3a0e-4420-9727-708ef471784c-6eaa77&auto_redirect=0&ndcp=1&cache_type=1&xmfcid=5a7b4821-d913-49f9-9e11-47cb25b884e964a09c88be1" class="download-btn">下载 Alpha1</a>
+                        <div class="download-card">
+                            <div class="download-icon"><i class="fas fa-code"></i></div>
+                            <h3>源代码</h3>
+                            <p>从 GitHub 获取最新源代码</p>
+                            <a href="https://github.com/Fialia9363/fialiaoi-cpp" class="download-btn">查看</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 更新日志区域 -->
-        <section id="changelog" class="changelog">
-            <div class="container">
-                <h2 class="section-title">更新日志</h2>
-                <div class="changelog-container">
-                    <div class="version">
-                        <div class="version-header">
-                            <h3 class="version-title">Beta1</h3>
-                            <span class="version-date">最新版本</span>
+            <!-- Windows版本下载页面 -->
+            <section id="windows-versions" class="version-page">
+                <div class="container">
+                    <a href="#download" class="back-btn" onclick="hideVersionPages()">
+                        <i class="fas fa-arrow-left"></i> 返回下载页面
+                    </a>
+                    <h2 class="section-title">Windows 版本下载</h2>
+                    <div class="version-list">
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Beta1</h3>
+                                <p>功能完整的开发环境 - 包含中文化界面、文件树、多标签编辑器等完整功能</p>
+                                <div class="version-date">最新版本</div>
+                            </div>
+                            <div class="version-actions">
+                                <a href="https://www.123865.com/s/uMdgvd-MKWc3" class="download-btn">下载 Beta1</a>
+                            </div>
                         </div>
-                        <div class="feature-grid">
-                            <div class="feature-item">中文化界面（菜单、按钮、状态栏、提示）</div>
-                            <div class="feature-item">文件树（打开文件夹、双击打开）</div>
-                            <div class="feature-item">多标签编辑器（多文件）</div>
-                            <div class="feature-item">代码高亮（pygments；不可用时平滑降级）</div>
-                            <div class="feature-item">自动缩进（回车继承缩进，冒号后增加缩进；Tab → 4 空格）</div>
-                            <div class="feature-item">代码自动补全（Ctrl+Space，基于 jedi；无 jedi 时间退到简单补全）</div>
-                            <div class="feature-item">悬停显示文档/调试时显示变量值（浮动可滚动窗口）</div>
-                            <div class="feature-item">函数签名提示（输入（弹出签名，输入，高亮当前参数）</div>
-                            <div class="feature-item">多终端支持（可新建终端，终端内可执行 shell 命令；每个终端可运行子进程并被 Stop 中断）</div>
-                            <div class="feature-item">运行（Python / C via GCC）输出到终端，支持中断（terminate/kill）</div>
-                            <div class="feature-item">配置界面并持久化到 config.json（GCC 路径、字体、主题、自动保存间隔）</div>
-                            <div class="feature-item">底部状态栏（文件名、光标位置、调试状态文字 + 小圆点、系统时间、内存、CPU）</div>
-                            <div class="feature-item">自动保存、浅色/深色主题切换、行号、简单断点占位（可扩展）</div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Alpha2</h3>
+                                <p>新增Java语言支持，预设GCC和Java21编译器</p>
+                                <div class="version-date">发布日期: 2025-10-15</div>
+                            </div>
+                            <div class="version-actions">
+                                <a href="https://www.123865.com/s/uMdgvd-I0Wc3" class="download-btn">下载 Alpha2</a>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="version">
-                        <div class="version-header">
-                            <h3 class="version-title">Alpha2</h3>
-                            <span class="version-date">2025-10-1</span>
-                        </div>
-                        <ul class="version-list">
-                            <li>新增了Java语言编译支持</li>
-                            <li>预设了GCC编译器和Java21编译器</li>
-                            <li>优化了代码编辑器性能</li>
-                            <li>改进了用户界面设计</li>
-                            <li>增强了代码补全功能</li>
-                            <li>修复了Alpha1版本中的多个问题</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="version">
-                        <div class="version-header">
-                            <h3 class="version-title">Alpha1</h3>
-                            <span class="version-date">2025-09-30</span>
-                        </div>
-                        <ul class="version-list">
-                            <li>在使用前，请进入源代码目录下运行cmd并输入指令: pip install requirements.txt</li>
-                            <li>有基础的编辑器和代码高亮</li>
-                            <li>有了目录浏览器，可以寻找路径并打开</li>
-                            <li>代码解析基础功能实现</li>
-                            <li>部分功能实现</li>
-                            <li>更多请大家下载后体验</li>
-                        </ul>
-                        <div class="notice">
-                            注意：报错时请选择保留即可
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Alpha1</h3>
+                                <p>初始版本 - 基础编辑器和代码高亮功能</p>
+                                <div class="version-date">发布日期: 2025-09-30</div>
+                            </div>
+                            <div class="version-actions">
+                                <a href="https://m204.lanosso.com:446/09302100255963642bb/2025/09/30/1db74ae150b4798418cda63c0e129c43.exe?st=GcFXxRgi3m27OgEVt2wi-A&e=1759239363&b=VEBdNAVkUjsDP1BnBDsGawJ6WmVUJVEnCHtfEwdsA3EGPF08V2YHXQAcAjoLKA5_bVmJdbQZrBS1SZFsuB2U_c&fi=255963642&pid=1-83-233-63&up=2&mp=0&co=0" class="download-btn">下载 Alpha1</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 资源区域 -->
-        <section id="resources" class="resources">
-            <div class="container">
-                <h2 class="section-title">资源与社区</h2>
-                <div class="resources-grid">
-                    <div class="resource-column">
-                        <h3>资源</h3>
-                        <ul class="resource-links">
-                            <li><a href="#"><i class="fas fa-book"></i> 文档</a></li>
-                            <li><a href="#"><i class="fas fa-graduation-cap"></i> 教程</a></li>
-                            <li><a href="#"><i class="fas fa-code"></i> API参考</a></li>
-                            <li><a href="#"><i class="fas fa-laptop-code"></i> 示例</a></li>
-                        </ul>
-                    </div>
-                    <div class="resource-column">
-                        <h3>社区</h3>
-                        <ul class="resource-links">
-                            <li><a href="https://github.com/Fialia9363/fialiaoi-cpp"><i class="fab fa-github"></i> GitHub</a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i> 论坛</a></li>
-                            <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
-                            <li><a href="#"><i class="fas fa-blog"></i> 博客</a></li>
-                        </ul>
+            <!-- 更新日志区域 -->
+            <section id="changelog" class="changelog">
+                <div class="container">
+                    <h2 class="section-title">更新日志</h2>
+                    <div class="changelog-container">
+                        <div class="version">
+                            <div class="version-header">
+                                <h3 class="version-title">Beta1</h3>
+                                <span class="version-date">最新版本</span>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">中文化界面（菜单、按钮、状态栏、提示）</div>
+                                <div class="feature-item">文件树（打开文件夹、双击打开）</div>
+                                <div class="feature-item">多标签编辑器（多文件）</div>
+                                <div class="feature-item">代码高亮（pygments；不可用时平滑降级）</div>
+                                <div class="feature-item">自动缩进（回车继承缩进，冒号后增加缩进；Tab → 4 空格）</div>
+                                <div class="feature-item">代码自动补全（Ctrl+Space，基于 jedi；无 jedi 时间退到简单补全）</div>
+                                <div class="feature-item">悬停显示文档/调试时显示变量值（浮动可滚动窗口）</div>
+                                <div class="feature-item">函数签名提示（输入（弹出签名，输入，高亮当前参数）</div>
+                                <div class="feature-item">多终端支持（可新建终端，终端内可执行 shell 命令；每个终端可运行子进程并被 Stop 中断）</div>
+                                <div class="feature-item">运行（Python / C via GCC）输出到终端，支持中断（terminate/kill）</div>
+                                <div class="feature-item">配置界面并持久化到 config.json（GCC 路径、字体、主题、自动保存间隔）</div>
+                                <div class="feature-item">底部状态栏（文件名、光标位置、调试状态文字 + 小圆点、系统时间、内存、CPU）</div>
+                                <div class="feature-item">自动保存、浅色/深色主题切换、行号、简单断点占位（可扩展）</div>
+                            </div>
+                        </div>
+                        
+                        <div class="version">
+                            <div class="version-header">
+                                <h3 class="version-title">Alpha2</h3>
+                                <span class="version-date">2025-10-15</span>
+                            </div>
+                            <ul class="version-list">
+                                <li>新增了Java语言编译支持</li>
+                                <li>预设了GCC编译器和Java21编译器</li>
+                                <li>优化了代码编辑器性能</li>
+                                <li>改进了用户界面设计</li>
+                                <li>增强了代码补全功能</li>
+                                <li>修复了Alpha1版本中的多个问题</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="version">
+                            <div class="version-header">
+                                <h3 class="version-title">Alpha1</h3>
+                                <span class="version-date">2025-09-30</span>
+                            </div>
+                            <ul class="version-list">
+                                <li>在使用前，请进入源代码目录下运行cmd并输入指令: pip install requirements.txt</li>
+                                <li>有基础的编辑器和代码高亮</li>
+                                <li>有了目录浏览器，可以寻找路径并打开</li>
+                                <li>代码解析基础功能实现</li>
+                                <li>部分功能实现</li>
+                                <li>更多请大家下载后体验</li>
+                            </ul>
+                            <div class="notice">
+                                注意：报错时请选择保留即可
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- 资源区域 -->
+            <section id="resources" class="resources">
+                <div class="container">
+                    <h2 class="section-title">资源与社区</h2>
+                    <div class="resources-grid">
+                        <div class="resource-column">
+                            <h3>资源</h3>
+                            <ul class="resource-links">
+                                <li><a href="#"><i class="fas fa-book"></i> 文档</a></li>
+                                <li><a href="#"><i class="fas fa-graduation-cap"></i> 教程</a></li>
+                                <li><a href="#"><i class="fas fa-code"></i> API参考</a></li>
+                                <li><a href="#"><i class="fas fa-laptop-code"></i> 示例</a></li>
+                            </ul>
+                        </div>
+                        <div class="resource-column">
+                            <h3>社区</h3>
+                            <ul class="resource-links">
+                                <li><a href="https://github.com/Fialia9363/fialiaoi-cpp"><i class="fab fa-github"></i> GitHub</a></li>
+                                <li><a href="#"><i class="fas fa-comments"></i> 论坛</a></li>
+                                <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                                <li><a href="#"><i class="fas fa-blog"></i> 博客</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Origin 栏目 -->
+        <div id="origin" class="tab-content">
+            <section class="empty-section">
+                <div class="container">
+                    <i class="fas fa-box-open"></i>
+                    <h2>Origin 栏目</h2>
+                    <p>此栏目内容正在开发中，敬请期待...</p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- 页脚 -->
@@ -918,6 +1113,35 @@
                 behavior: 'smooth'
             });
         }
+
+        // 栏目切换功能
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 移除所有按钮的active类
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // 添加当前按钮的active类
+                this.classList.add('active');
+                
+                // 隐藏所有内容
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // 显示对应内容
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                
+                // 切换主题
+                if (tabId === 'fialiaoi') {
+                    document.body.className = 'theme-blue';
+                } else {
+                    document.body.className = 'theme-orange';
+                }
+            });
+        });
     </script>
 </body>
 </html>
