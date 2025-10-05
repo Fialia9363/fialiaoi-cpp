@@ -252,6 +252,16 @@
             transition: all 0.5s ease;
         }
 
+        .new-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
         .theme-orange .version-badge {
             background: rgba(230, 126, 34, 0.15);
             border: 1px solid rgba(230, 126, 34, 0.3);
@@ -373,6 +383,10 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--border-color);
+        }
+        
+        .feature-card.new-feature {
+            border-left: 4px solid #e74c3c;
         }
         
         .feature-card:hover {
@@ -551,10 +565,18 @@
             border: 1px solid var(--border-color);
         }
         
+        .version-item.latest {
+            border-left: 4px solid #e74c3c;
+        }
+        
         .version-info h3 {
             color: var(--accent-color);
             margin-bottom: 10px;
             transition: all 0.5s ease;
+        }
+
+        .version-item.latest .version-info h3 {
+            color: #e74c3c;
         }
 
         .version-info p {
@@ -609,6 +631,10 @@
             border: 1px solid var(--border-color);
         }
         
+        .version.latest {
+            border-left: 4px solid #e74c3c;
+        }
+        
         .version-header {
             display: flex;
             justify-content: space-between;
@@ -621,6 +647,10 @@
             font-size: 1.5rem;
             color: var(--accent-color);
             transition: all 0.5s ease;
+        }
+        
+        .version.latest .version-title {
+            color: #e74c3c;
         }
         
         .version-date {
@@ -848,7 +878,7 @@
         <!-- 英雄区域 -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="version-badge">最新版本 Beta1 - 功能完整的开发环境</div>
+                <div class="version-badge">最新版本 Beta2 <span class="new-badge">NEW</span> - 功能完整的开发环境</div>
                 <h2>Fialiaoi-cpp</h2>
                 <p>一个高效、现代且易于使用的多语言开发框架，持续为Oler提供更好的编程体验。</p>
                 <div class="disclaimer">
@@ -871,35 +901,35 @@
                 <div class="container">
                     <h2 class="section-title">强大的特色功能</h2>
                     <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-language"></i></div>
-                            <h3>中文化界面</h3>
-                            <p>完整的本地化支持，菜单、按钮、状态栏、提示信息全部中文化，提供更好的用户体验。</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-code"></i></div>
-                            <h3>智能代码编辑</h3>
-                            <p>代码高亮、自动缩进、代码补全、函数签名提示，让编程更加高效便捷。</p>
-                        </div>
-                        <div class="feature-card">
+                        <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-folder-tree"></i></div>
                             <h3>文件树管理</h3>
-                            <p>直观的文件树界面，支持打开文件夹、双击打开文件，方便项目文件管理。</p>
+                            <p>完整的文件树功能，支持打开文件夹、双击打开文件，方便项目文件管理。</p>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-window-restore"></i></div>
                             <h3>多标签编辑器</h3>
-                            <p>支持多文件同时编辑，标签页管理，轻松在不同文件间切换。</p>
+                            <p>支持多文件同时编辑，标签页管理，带行号显示，轻松在不同文件间切换。</p>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card new-feature">
+                            <div class="feature-icon"><i class="fas fa-code"></i></div>
+                            <h3>智能代码编辑</h3>
+                            <p>基于 pygments 的代码高亮，自动缩进，Tab 转 4 空格，提升编码效率。</p>
+                        </div>
+                        <div class="feature-card new-feature">
+                            <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h3>智能代码补全</h3>
+                            <p>Ctrl+Space 触发基于 jedi 的代码自动补全，支持函数签名提示和参数高亮。</p>
+                        </div>
+                        <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-terminal"></i></div>
                             <h3>多终端支持</h3>
-                            <p>可新建多个终端，支持shell命令执行，每个终端可独立运行和中断子进程。</p>
+                            <p>可新建多个终端，自动识别并编译运行 Python/C/C++，支持运行中断功能。</p>
                         </div>
-                        <div class="feature-card">
-                            <div class="feature-icon"><i class="fas fa-cog"></i></div>
-                            <h3>可配置环境</h3>
-                            <p>完整的配置界面，支持主题切换、字体设置、编译器路径配置等，配置持久化保存。</p>
+                        <div class="feature-card new-feature">
+                            <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+                            <h3>高级功能</h3>
+                            <p>代码折叠、查找替换、错误检查、主题切换、项目管理等专业开发功能。</p>
                         </div>
                     </div>
                 </div>
@@ -974,11 +1004,21 @@
                     </a>
                     <h2 class="section-title">Windows 版本下载</h2>
                     <div class="version-list">
+                        <div class="version-item latest">
+                            <div class="version-info">
+                                <h3>Beta2 <span class="new-badge">最新</span></h3>
+                                <p>功能完整的开发环境 - 包含文件树、多标签编辑器、代码高亮、智能补全等完整功能</p>
+                                <div class="version-date">发布日期: 2025-12-01</div>
+                            </div>
+                            <div class="version-actions">
+                                <a href="#" class="download-btn">下载 Beta2</a>
+                            </div>
+                        </div>
                         <div class="version-item">
                             <div class="version-info">
                                 <h3>Beta1</h3>
                                 <p>功能完整的开发环境 - 包含中文化界面、文件树、多标签编辑器等完整功能</p>
-                                <div class="version-date">最新版本</div>
+                                <div class="version-date">发布日期: 2025-10-01</div>
                             </div>
                             <div class="version-actions">
                                 <a href="https://123-184-218-56.pd1.cjjd19.com:30443/download-cdn.123295.com/123-578/956a9208/1852770967-0/956a9208d1e5329cba1e2c16a1231a42/c-m98?v=5&t=1759625429&s=1759625429654647dff94be98f91530c73618213d8&r=8QTCA2&bzc=2&bzs=313835323737303936373a35363337343838363a34323234373136393a31383532373730393637&bzp=0&bi=4246284666&filename=fialiaoi-cpp_beta1+Install.exe&x-mf-biz-cid=02ea0e0f-2c84-479c-a243-1d44e8e70ab0-3dab77&auto_redirect=0&ndcp=1&cache_type=1&xmfcid=9793f7b1-a981-40e4-afe7-9e88b04d394b69a09c88be1" class="download-btn">下载 Beta1</a>
@@ -1013,10 +1053,38 @@
                 <div class="container">
                     <h2 class="section-title">更新日志</h2>
                     <div class="changelog-container">
+                        <div class="version latest">
+                            <div class="version-header">
+                                <h3 class="version-title">Beta2 <span class="new-badge">最新版本</span></h3>
+                                <span class="version-date">发布日期: 2025-12-01</span>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">文件树、打开文件夹、双击打开</div>
+                                <div class="feature-item">多标签编辑器（带行号）</div>
+                                <div class="feature-item">代码高亮 (pygments)</div>
+                                <div class="feature-item">自动缩进 (回车继承缩进, 冒号后增加)</div>
+                                <div class="feature-item">Tab -> 4 空格</div>
+                                <div class="feature-item">代码自动补全 (Ctrl+Space, jedi)</div>
+                                <div class="feature-item">悬停文档提示 (浮动可滚动窗口)</div>
+                                <div class="feature-item">函数参数签名提示 (逗号高亮当前参数)</div>
+                                <div class="feature-item">多终端、运行 Python/C/C++（自动识别并编译）</div>
+                                <div class="feature-item">运行中断（Stop 按钮 kill 子进程）</div>
+                                <div class="feature-item">状态栏 (文件/光标/状态/时间/CPU/内存)</div>
+                                <div class="feature-item">配置界面并持久化 (config.json)</div>
+                                <div class="feature-item">自动保存</div>
+                                <div class="feature-item">查找替换对话框 (Ctrl+F)</div>
+                                <div class="feature-item">代码折叠 (Python/C/C++ 函数和类)</div>
+                                <div class="feature-item">主题切换 (light/dark)</div>
+                                <div class="feature-item">项目管理 (最近打开的文件)</div>
+                                <div class="feature-item">错误检查与行号标记</div>
+                                <div class="feature-item">改进的调试功能 (基础断点支持)</div>
+                            </div>
+                        </div>
+                        
                         <div class="version">
                             <div class="version-header">
                                 <h3 class="version-title">Beta1</h3>
-                                <span class="version-date">最新版本</span>
+                                <span class="version-date">发布日期: 2025-10-01</span>
                             </div>
                             <div class="feature-grid">
                                 <div class="feature-item">中文化界面（菜单、按钮、状态栏、提示）</div>
