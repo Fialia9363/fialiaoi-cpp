@@ -878,7 +878,7 @@
         <!-- 英雄区域 -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="version-badge">(Fialia 最新版本 Beta2) (Origin现在正在开发中)<span class="new-badge">NEW</span> - 功能完整的开发环境</div>
+                <div class="version-badge">(Fialia 最新版本 Beta3) (Origin现在正在开发中)<span class="new-badge">NEW</span> - 功能完整的开发环境</div>
                 <h2>Fialiaoi</h2>
                 <p>一个提供广大ide的网站，为各位Oler们提供更好的下载地址</p>
                 <div class="disclaimer">
@@ -903,18 +903,18 @@
                     <div class="features-grid">
                         <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-folder-tree"></i></div>
-                            <h3>文件树管理</h3>
-                            <p>完整的文件树功能，支持打开文件夹、双击打开文件，方便项目文件管理。</p>
+                            <h3>增强的文件树功能</h3>
+                            <p>直接显示内容，智能展开机制，即时刷新，子目录检测，优化显示效果。</p>
                         </div>
                         <div class="feature-card new-feature">
-                            <div class="feature-icon"><i class="fas fa-window-restore"></i></div>
-                            <h3>多标签编辑器</h3>
-                            <p>支持多文件同时编辑，标签页管理，带行号显示，轻松在不同文件间切换。</p>
+                            <div class="feature-icon"><i class="fas fa-play-circle"></i></div>
+                            <h3>稳定的运行系统</h3>
+                            <p>文件保存检查，文件存在性验证，错误处理增强，运行状态实时反馈。</p>
                         </div>
                         <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-code"></i></div>
-                            <h3>智能代码编辑</h3>
-                            <p>基于 pygments 的代码高亮，自动缩进，Tab 转 4 空格，提升编码效率。</p>
+                            <h3>C++编译修复</h3>
+                            <p>标准库链接，编译重试机制，详细错误输出，解决C++标准库链接错误。</p>
                         </div>
                         <div class="feature-card new-feature">
                             <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
@@ -944,7 +944,7 @@
                             <div class="download-icon"><i class="fab fa-windows"></i></div>
                             <h3>Windows</h3>
                             <p>支持 Windows 10/11 系统</p>
-                            <a href="https://github.com/Fialia9363/fialiaoi-cpp">查看所有版本</a>
+                            <a href="https://github.com/Fialia9363/fialiaoi-cpp" class="download-btn">查看所有版本</a>
                         </div>
                         <div class="download-card coming-soon">
                             <div class="download-icon"><i class="fab fa-linux"></i></div>
@@ -975,7 +975,30 @@
                     <div class="changelog-container">
                         <div class="version latest">
                             <div class="version-header">
-                                <h3 class="version-title">Beta2 <span class="new-badge">最新版本</span></h3>
+                                <h3 class="version-title">Beta3 <span class="new-badge">最新版本</span></h3>
+                                <span class="version-date">发布日期: 2025-10-9</span>
+                            </div>
+                            <div class="feature-grid">
+                                <div class="feature-item">文件保存检查 - 运行前强制保存文件，避免运行未保存内容</div>
+                                <div class="feature-item">文件存在性验证 - 检查文件路径是否存在</div>
+                                <div class="feature-item">错误处理增强 - 更完善的异常捕获和用户提示</div>
+                                <div class="feature-item">运行状态反馈 - 状态栏显示运行状态（运行中/运行错误）</div>
+                                <div class="feature-item">直接显示内容 - 不再显示"加载中..."，直接加载目录内容</div>
+                                <div class="feature-item">智能展开机制 - 使用 <<TreeviewOpen>> 事件动态加载子目录</div>
+                                <div class="feature-item">即时刷新 - 点击目录立即显示内容，无需等待</div>
+                                <div class="feature-item">子目录检测 - 自动检测目录是否有子目录，优化显示效果</div>
+                                <div class="feature-item">标准库链接 - 添加 -lstdc++ 参数解决C++标准库链接错误</div>
+                                <div class="feature-item">编译重试机制 - 如果第一次编译失败，尝试简化编译命令</div>
+                                <div class="feature-item">详细错误输出 - 在终端中显示完整的编译过程和错误信息</div>
+                                <div class="feature-item">状态栏优化 - 实时显示文件保存状态和运行状态</div>
+                                <div class="feature-item">错误提示 - 更友好的错误消息框</div>
+                                <div class="feature-item">快捷键绑定 - 完善了所有菜单功能的快捷键</div>
+                            </div>
+                        </div>
+                        
+                        <div class="version">
+                            <div class="version-header">
+                                <h3 class="version-title">Beta2</h3>
                                 <span class="version-date">发布日期: 2025-10-05</span>
                             </div>
                             <div class="feature-grid">
